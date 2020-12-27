@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/module.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <title>STARBUCKS-JOA-VANILAJS</title>
+</head>
+
+<body id="root">
+  <header>
+    <div id="header-inner" class="header-inner">
+      <div class="coupon-banner">
+        <div class="banner-inner">
+          <div class="banner-content-wrapper">
+            <span class="banner-content-text">
+              스타벅스 첫 주문을 지원하는 <span class="point">15%</span> 할인쿠폰
+            </span>
+            <spna class="banner-content-btn">쿠폰받기</spna>
+          </div>
+        </div>
+      </div>
+      <div class="header-content-wrapper">
+        <a href="./index.html"><img class="logo" src="./img/logo.png" /></a>
+
+        <ul class="navigation">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./menu.html">MENU</a></li>
+          <li><a href="#">WHAT'S NEW</a></li>
+          <li><a href="#">RESPONSIBILITY</a></li>
+        </ul>
+      </div>
+      <div class="header-content-wrapper-mobile">
+        <div class="navigation-mobile-wrapper">
+          <ul class="navigation-mobile">
+            <li><a href="./index.html">
+                <div class="header-content-btn-mobile-home btn-active">HOME</div>
+              </a></li>
+            <li><a href="./menu.html">
+                <div class="header-content-btn-mobile-menu">MENU</div>
+              </a></li>
+            <li><a href="#">
+                <div class="header-content-btn-mobile-new">NEW</div>
+              </a></li>
+            <li><a href="#">
+                <div class="header-content-btn-mobile-my">MY</div>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="content-wrapper">
+      <div class="content-textBox">
+        <div class="circle"></div>
+        <div class="textBox">
+          <h2>It`s not just Coffee<br>It`s <span>Starbucks</span></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <img src="./img/img1.png" class="starbucks" />
+        </div>
+        <ul class="thumb">
+          <li><img src="./img/thumb1.png" onclick="imgSlider('./img/img1.png' ); changeCircleColor('#017143')" /></li>
+          <li><img src="./img/thumb2.png" onclick="imgSlider('./img/img2.png' ); changeCircleColor('#eb7495')" /></li>
+          <li><img src="./img/thumb3.png" onclick="imgSlider('./img/img3.png' ); changeCircleColor('#d752b1')" /></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <main>
+
+  </main>
+</body>
+<script src="./app/index.js"></script>
+
+</html>
