@@ -33,7 +33,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: -.1px;
+  letter-spacing: -0.1px;
   position: relative;
   width: 100%;
   color: #fff;
@@ -61,7 +61,7 @@
   display: inline-block;
   background: #017143;
   color: #fff;
-  letter-spacing: -.6px;
+  letter-spacing: -0.6px;
   text-align: left;
   position: absolute;
   top: 50%;
@@ -129,7 +129,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 120px 50px 200px;
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .2);
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .textBox {
@@ -214,11 +214,8 @@
   max-width: 60px;
 }
 
-
-
 @media screen and (max-width: 540px) {
   .header-inner {
-    position: static;
     min-width: 320px;
     padding-bottom: 0;
   }
@@ -232,7 +229,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 16px;
-    letter-spacing: -.2px;
+    letter-spacing: -0.2px;
   }
 
   .banner-content-btn {
@@ -314,7 +311,6 @@
     vertical-align: top;
   }
 
-
   .header-content-btn-mobile-menu {
     overflow: hidden;
     position: relative;
@@ -358,7 +354,6 @@
     background-position-y: -56px;
   }
 
-
   .content-wrapper {
     min-width: auto;
     max-width: 100%;
@@ -371,7 +366,6 @@
     padding: 0 10px;
     box-shadow: none;
   }
-
 
   .textBox h2 {
     font-size: 2.5em;
@@ -392,7 +386,6 @@
   .imgBox img {
     max-width: 300px;
   }
-
 
   .thumb {
     bottom: 70px;

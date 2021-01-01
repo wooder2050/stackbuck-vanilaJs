@@ -129,7 +129,7 @@
 @media screen and (max-width: 540px) {
   .menu-content-wrapper {
     min-width: 0;
-    padding: 10px 0 68px;
+    padding: 150px 0 68px;
     transition: padding-top .25s ease-out;
   }
 

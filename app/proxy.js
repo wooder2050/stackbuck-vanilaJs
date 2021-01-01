@@ -19,7 +19,6 @@ async function getProductAll() {
     const imgElement = document.createElement("img");
     imgElement.setAttribute("id", `img${index + 1}`);
     imgElement.classList.add("menu-product-img");
-    // imgElement.src = product.img;
     imgElement.dataset.img = product.img;
 
     const imgInner = document.createElement("div");
