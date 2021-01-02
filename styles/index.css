@@ -357,7 +357,7 @@
   .content-wrapper {
     min-width: auto;
     max-width: 100%;
-    padding: 50px 0 0;
+    padding: 150px 0 0;
   }
 
   .content-textBox {
@@ -381,6 +381,7 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 150px;
+    padding-right: 0;
   }
 
   .imgBox img {

@@ -29,6 +29,7 @@ async function getProductAll() {
     imgWrapper.append(imgInner);
     const productInner = document.createElement("a");
     productInner.classList.add("menu-product-inner");
+    productInner.href = `./product.html?id=${product._id}`;
     productInner.append(imgWrapper);
 
     const productInfoWrapper = document.createElement("div");

@@ -141,6 +141,10 @@
     margin: 0;
   }
 
+  .menu-product-info-wrapper {
+    margin: 14px 12px 0;
+  }
+
   .menu-product-list-wrapper {
     margin-top: 0;
     -webkit-box-flex: 0;
