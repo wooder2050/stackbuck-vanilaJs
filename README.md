@@ -8,6 +8,8 @@
 
 ### Menu
 
+![](menuDesktop.gif)
+
 ### Product Detail
 
 ![](productDetailDesktop.gif)
@@ -19,6 +21,8 @@
 ![](homeMobile.gif)
 
 ### Menu
+
+![](menuMobile.gif)
 
 ### Product Detail
 
