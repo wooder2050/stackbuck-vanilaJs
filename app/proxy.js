@@ -94,7 +94,31 @@ async function getProductAll() {
 }
 
 async function setObserver(category) {
-  if (category) await getProductByCategory(category);
+  const categoryListInner = document.getElementsByClassName(
+    "menu-category-list-inner-moblie"
+  )[0];
+  const headerInner = document.getElementById("header-inner");
+  const root = document.getElementById("root");
+  const menuArroow = document.getElementsByClassName("updown-arrow")[0];
+  const menuCategoryListNamesDown = document.getElementsByClassName(
+    "menu-category-list-names-down-mobile"
+  )[0];
+  const menuCategoryListNamesBackDown = document.getElementsByClassName(
+    "menu-category-list-names-down-back-mobile"
+  )[0];
+
+  categoryListInner.classList.remove("category-list-active");
+  headerInner.classList.remove("active");
+  root.style.removeProperty("overflow");
+  menuArroow.classList.remove("arrow-active");
+  menuCategoryListNamesBackDown.style.display = "none";
+
+  menuCategoryListNamesDown.style.display = "none";
+  const mobileSelectedMenu = document
+    .getElementsByClassName("menu-category-list-name-mobile")[0]
+    .getElementsByTagName("p")[0];
+  if (category) mobileSelectedMenu.innerHTML = category;
+  if (category && category !== "전체보기") await getProductByCategory(category);
   else await getProductAll();
   const options = {
     root: null,
@@ -216,46 +240,70 @@ async function getProductByCategory(category) {
   const menuCategoryList = document.getElementsByClassName(
     "menu-category-list-menu"
   );
+  const menuCategoryListMobille = document.getElementsByClassName(
+    "menu-category-list-menu-mobile"
+  );
 
   for (let i = 0; i < menuCategoryList.length; i++) {
     menuCategoryList[i].classList.remove("menu-category-list-active");
   }
+  for (let i = 0; i < menuCategoryListMobille.length; i++) {
+    menuCategoryListMobille[i].classList.remove(
+      "menu-category-list-mobile-active"
+    );
+  }
   let menuEl;
+  let menuElMobile;
   switch (category) {
     case "콜드 브루":
       menuEl = document.getElementById("coldBrew");
+      menuElMobile = document.getElementById("coldBrew-m");
       break;
     case "에스프레소":
       menuEl = document.getElementById("espresso");
+      menuElMobile = document.getElementById("espresso-m");
       break;
     case "프라푸치노":
       menuEl = document.getElementById("frappuccino");
+      menuElMobile = document.getElementById("frappuccino-m");
       break;
     case "블렌디드":
       menuEl = document.getElementById("blended");
+      menuElMobile = document.getElementById("blended-m");
       break;
     case "스타벅스 피지오":
       menuEl = document.getElementById("fizzio");
+      menuElMobile = document.getElementById("fizzio-m");
       break;
     case "티":
       menuEl = document.getElementById("tea");
+      menuElMobile = document.getElementById("tea-m");
       break;
     case "스타벅스 주스":
       menuEl = document.getElementById("juice");
+      menuElMobile = document.getElementById("juice-m");
       break;
+    default:
+      menuElMobile = document.getElementById("total-m");
   }
   menuEl.classList.add("menu-category-list-active");
+  menuElMobile.classList.add("menu-category-list-mobile-active");
 }
 
-const toggleCategoryMenu = document.getElementsByClassName(
-  "menu-category-list-name-mobile"
-)[0];
-toggleCategoryMenu.addEventListener("click", function (e) {
+function mobileMenuToggle() {
   const categoryListInner = document.getElementsByClassName(
     "menu-category-list-inner-moblie"
   )[0];
   const headerInner = document.getElementById("header-inner");
   const root = document.getElementById("root");
+  const menuArroow = document.getElementsByClassName("updown-arrow")[0];
+  const menuCategoryListNamesDown = document.getElementsByClassName(
+    "menu-category-list-names-down-mobile"
+  )[0];
+  const menuCategoryListNamesBackDown = document.getElementsByClassName(
+    "menu-category-list-names-down-back-mobile"
+  )[0];
+
   if (
     categoryListInner.className.split(" ").indexOf("category-list-active") !==
     -1
@@ -263,9 +311,24 @@ toggleCategoryMenu.addEventListener("click", function (e) {
     categoryListInner.classList.remove("category-list-active");
     headerInner.classList.remove("active");
     root.style.removeProperty("overflow");
+    menuArroow.classList.remove("arrow-active");
+    menuCategoryListNamesBackDown.style.display = "none";
+    menuCategoryListNamesDown.style.display = "none";
   } else {
     categoryListInner.classList.add("category-list-active");
     headerInner.classList.add("active");
     root.style.overflow = "hidden";
+    menuArroow.classList.add("arrow-active");
+    menuCategoryListNamesBackDown.style.display = "block";
+    menuCategoryListNamesDown.style.display = "block";
   }
-});
+}
+
+const toggleCategoryMenu = document.getElementsByClassName(
+  "menu-category-list-name-mobile"
+)[0];
+const toggleCategoryMenuBack = document.getElementsByClassName(
+  "menu-category-list-names-down-back-mobile"
+)[0];
+toggleCategoryMenu.addEventListener("click", mobileMenuToggle);
+toggleCategoryMenuBack.addEventListener("click", mobileMenuToggle);

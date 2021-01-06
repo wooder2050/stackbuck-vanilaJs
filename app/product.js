@@ -12,7 +12,6 @@ async function getProduct() {
     },
   });
   let responseJson = await response.json();
-  console.log(responseJson);
   const imgBox = document.getElementsByClassName("product-detail-photo")[0];
   imgBox.src = responseJson.product.img;
   const nameBox = document.getElementsByClassName(

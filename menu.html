@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <link rel="shortcut icon" href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
+    type="image/ico">
   <link rel="stylesheet" href="./styles/index.css" />
   <link rel="stylesheet" href="./styles/menu.css" />
   <link rel="stylesheet" href="./styles/module.css" />
@@ -32,7 +34,7 @@
           <li><a href="./index.html">HOME</a></li>
           <li><a href="./menu.html">MENU</a></li>
           <li><a href="#">WELOVE</a></li>
-          <li><a href="#">MY</a></li>
+          <li><a href="#">MYPAGE</a></li>
         </ul>
       </div>
       <div class="header-content-wrapper-mobile">
@@ -66,7 +68,7 @@
               </div>
             </div>
             <div class="menu-category-lists">
-              <div class="menu-category-list-menu" onclick="setObserver()" id="menu-category-list-total">
+              <div class="menu-category-list-menu" onclick="setObserver('전체보기')" id="menu-category-list-total">
                 전체보기
               </div>
               <div class="menu-category-list-menu" onclick="setObserver('콜드 브루')" id="coldBrew">
@@ -99,10 +101,29 @@
                 <i class="right-arrow"></i>
               </a>
               <a class="menu-category-list-name-mobile">
-                전체보기
+                <p>전체보기</p>
                 <i class="updown-arrow"></i>
               </a>
             </div>
+            <div class="menu-category-list-names-down-mobile">
+              <div class="menu-category-list-names-down-mobile-inner">
+                <ul class="menu-category-list-names-wrapper-mobile">
+                  <li class="menu-category-list-menu-mobile menu-category-list-mobile-active"
+                    onclick="setObserver('전체보기')" id="total-m">전체보기</li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('콜드 브루')" id="coldBrew-m">콜드 브루</li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('에스프레소')" id="espresso-m">에스프레소</li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('프라푸치노')" id="frappuccino-m">프라푸치노
+                  </li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('블렌디드')" id="blended-m">블렌디드</li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('스타벅스 피지오')" id="fizzio-m">스타벅스 피지오
+                  </li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('티')" id="tea-m">티(티바나)</li>
+                  <li class="menu-category-list-menu-mobile" onclick="setObserver('스타벅스 주스')" id="juice-m">스타벅스 주스(병음료)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="menu-category-list-names-down-back-mobile"></div>
           </div>
         </div>
 
