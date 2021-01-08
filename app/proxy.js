@@ -11,9 +11,11 @@ async function getProductAll() {
   const menuCategoryList = document.getElementsByClassName(
     "menu-category-list-menu"
   );
+
   for (let i = 0; i < menuCategoryList.length; i++) {
     menuCategoryList[i].classList.remove("menu-category-list-active");
   }
+
   const menuSelected = document.getElementById("menu-category-list-total");
   menuSelected.classList.add("menu-category-list-active");
 
@@ -21,8 +23,10 @@ async function getProductAll() {
     "menu-product-list"
   )[0];
   productListWrapper.remove();
+
   const newProductList = document.createElement("div");
   newProductList.classList.add("menu-product-list");
+
   const wrapper = document.getElementsByClassName(
     "menu-product-list-wrapper"
   )[0];
@@ -40,9 +44,11 @@ async function getProductAll() {
     const imgInner = document.createElement("div");
     imgInner.classList.add("menu-prodcut-img-inner");
     imgInner.append(imgElement);
+
     const imgWrapper = document.createElement("div");
     imgWrapper.classList.add("menu-prodcut-img-wrapper");
     imgWrapper.append(imgInner);
+
     const productInner = document.createElement("a");
     productInner.classList.add("menu-product-inner");
     productInner.href = `./product.html?id=${product._id}`;
@@ -68,13 +74,16 @@ async function getProductAll() {
 
     const productInfoIngredient = document.createElement("div");
     productInfoIngredient.classList.add("menu-product-info-ingredient");
+
     const productInfoKcal = document.createElement("div");
     productInfoKcal.classList.add("menu-product-info-kcal");
     productInfoKcal.innerHTML += `kcal ${product.kcal}`;
     productInfoIngredient.append(productInfoKcal);
+
     const dash = document.createElement("div");
     dash.innerHTML += "/";
     productInfoIngredient.append(dash);
+
     const prodcutInfoCaffeine = document.createElement("div");
     prodcutInfoCaffeine.classList.add("menu-product-info-caffeine");
     prodcutInfoCaffeine.innerHTML += `caffeine ${product.caffeine}`;
@@ -112,14 +121,16 @@ async function setObserver(category) {
   root.style.removeProperty("overflow");
   menuArroow.classList.remove("arrow-active");
   menuCategoryListNamesBackDown.style.display = "none";
-
   menuCategoryListNamesDown.style.display = "none";
+
   const mobileSelectedMenu = document
     .getElementsByClassName("menu-category-list-name-mobile")[0]
     .getElementsByTagName("p")[0];
   if (category) mobileSelectedMenu.innerHTML = category;
+
   if (category && category !== "전체보기") await getProductByCategory(category);
   else await getProductAll();
+
   const options = {
     root: null,
     rootMargin: "0px",
@@ -142,6 +153,7 @@ async function setObserver(category) {
   };
   const observer = new IntersectionObserver(callback, options);
   const imgList = document.getElementsByClassName("menu-product-img");
+
   for (let i = 0; i < imgList.length; i++) {
     observer.observe(document.getElementById(`img${i + 1}`));
   }
@@ -165,8 +177,10 @@ async function getProductByCategory(category) {
     "menu-product-list"
   )[0];
   productListWrapper.remove();
+
   const newProductList = document.createElement("div");
   newProductList.classList.add("menu-product-list");
+
   const wrapper = document.getElementsByClassName(
     "menu-product-list-wrapper"
   )[0];
@@ -184,9 +198,11 @@ async function getProductByCategory(category) {
     const imgInner = document.createElement("div");
     imgInner.classList.add("menu-prodcut-img-inner");
     imgInner.append(imgElement);
+
     const imgWrapper = document.createElement("div");
     imgWrapper.classList.add("menu-prodcut-img-wrapper");
     imgWrapper.append(imgInner);
+
     const productInner = document.createElement("a");
     productInner.classList.add("menu-product-inner");
     productInner.href = `./product.html?id=${product._id}`;
@@ -212,13 +228,16 @@ async function getProductByCategory(category) {
 
     const productInfoIngredient = document.createElement("div");
     productInfoIngredient.classList.add("menu-product-info-ingredient");
+
     const productInfoKcal = document.createElement("div");
     productInfoKcal.classList.add("menu-product-info-kcal");
     productInfoKcal.innerHTML += `kcal ${product.kcal}`;
     productInfoIngredient.append(productInfoKcal);
+
     const dash = document.createElement("div");
     dash.innerHTML += "/";
     productInfoIngredient.append(dash);
+
     const prodcutInfoCaffeine = document.createElement("div");
     prodcutInfoCaffeine.classList.add("menu-product-info-caffeine");
     prodcutInfoCaffeine.innerHTML += `caffeine ${product.caffeine}`;
@@ -254,6 +273,7 @@ async function getProductByCategory(category) {
   }
   let menuEl;
   let menuElMobile;
+
   switch (category) {
     case "콜드 브루":
       menuEl = document.getElementById("coldBrew");

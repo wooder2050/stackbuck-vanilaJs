@@ -2,11 +2,8 @@ const root = document.getElementById("root");
 
 window.addEventListener("scroll", function (e) {
   const headerInner = document.getElementById("header-inner");
-  if (window.scrollY) {
-    headerInner.classList.add("active");
-  } else {
-    headerInner.classList.remove("active");
-  }
+  if (window.scrollY) headerInner.classList.add("active");
+  else headerInner.classList.remove("active");
 });
 
 function imgSlider(anything) {

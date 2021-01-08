@@ -12,8 +12,10 @@ async function getProduct() {
     },
   });
   let responseJson = await response.json();
+
   const imgBox = document.getElementsByClassName("product-detail-photo")[0];
   imgBox.src = responseJson.product.img;
+
   const nameBox = document.getElementsByClassName(
     "product-detail-main-info-name"
   )[0];
@@ -22,14 +24,17 @@ async function getProduct() {
     "product-detail-main-info-eng-name"
   )[0];
   engNameBox.innerHTML = responseJson.product.name_eng;
+
   const priceBox = document.getElementsByClassName(
     "product-detail-main-price"
   )[0];
   priceBox.innerHTML = `${responseJson.product.price.toLocaleString()}원`;
+
   const contentBox = document.getElementsByClassName(
     "product-detail-content"
   )[0];
   contentBox.innerHTML = responseJson.product.content;
+
   const kcalNumber = document.getElementsByClassName(
     "product-detail-nutrition-kcal-number"
   )[0];
